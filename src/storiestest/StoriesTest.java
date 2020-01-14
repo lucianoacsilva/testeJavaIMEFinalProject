@@ -29,8 +29,8 @@ class StoriesTest {
 	@DisplayName("Teste de ordenação de códigos!!")
 	void testaOrdenacao() {
 		assertArrayEquals(new int[]{22, 45, 61, 89}, historinhas.ordenacao(new int[]{89, 45, 61, 22}));
-		assertArrayEquals(new int[]{22}, historinhas.ordenar(new int[]{22}));
-		assertArrayEquals(new int[]{}, historinhas.ordenar(new int[]{}));
+		assertArrayEquals(new int[]{22}, historinhas.ordenacao(new int[]{22}));
+		assertArrayEquals(new int[]{}, historinhas.ordenacao(new int[]{}));
 	}
 	
 	@Test
@@ -42,7 +42,7 @@ class StoriesTest {
 	}
 	
 	@Test
-	@DisplayName("Teste do retorno do primeiro nome!!")
+	@DisplayName("Teste da calculadora")
 	void testaCalculadora() {
 		assertEquals("3", historinhas.calculadora(2, "+", 1));
 		assertEquals("5", historinhas.calculadora(7, "-", 2));
@@ -50,6 +50,7 @@ class StoriesTest {
 		assertEquals("4", historinhas.calculadora(32, "/", 8));
 		assertEquals("2.5", historinhas.calculadora(5, "/", 2));
 		assertEquals("Erro, não se pode dividir por 0!!", historinhas.calculadora(32, "/", 0));
+		assertEquals("Operação inválida. Tente novamente!", historinhas.calculadora(32, "(", 2));
 	}
 	
 	@AfterEach
